@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "276256de7692a4687e26551858d861c7",
+    "packages": [
+        {
+            "name": "chovanec/elo-rating",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Chovanec/elo-rating.git",
+                "reference": "c195d4651e6cd3cf7083d3c8c4e91a7ff3df7525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Chovanec/elo-rating/zipball/c195d4651e6cd3cf7083d3c8c4e91a7ff3df7525",
+                "reference": "c195d4651e6cd3cf7083d3c8c4e91a7ff3df7525",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chovanec\\Rating\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michal Chovanec",
+                    "homepage": "http://michalchovanec.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP implementation of Elo rating system",
+            "homepage": "https://github.com/Chovanec/elo-rating",
+            "keywords": [
+                "Rating",
+                "elo",
+                "ranking"
+            ],
+            "time": "2018-09-14T11:55:54+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "chovanec/elo-rating": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
