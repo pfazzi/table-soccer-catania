@@ -9,14 +9,16 @@ $results = [
     ['Umberto', 'Dario', 'Patrick', 'Carmelo', '4', '10'],
     ['Patrick', 'Carmelo', 'Domenico', 'Vittorio', '7', '10'],
     ['Patrick', 'Carmelo', 'Domenico', 'Vittorio', '5', '10'],
-    ['Patrick', 'Carmelo ', 'Vittorio', 'Dario', '10', '7'],
+    ['Patrick', 'Carmelo', 'Vittorio', 'Dario', '10', '7'],
     ['Patrick', 'Carmelo', 'Domenico', 'Dario', '10', '6'],
     ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', 'AB', '10'],
     ['Stefano', 'Vittorio', 'Domenico', 'Carmelo', '10', '4'],
     ['Patrick', 'Vittorio', 'Stefano', 'Dario', '8', '10'],
     ['Patrick', 'Vittorio', 'Domenico', 'Carmelo', '7', '10'],
     ['Domenico', 'Mirko', 'Patrick', 'Carmelo', '10', '5'],
-    ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', '10', '5']
+    ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', '10', '5'],
+    ['Domenico', 'Vittorio', 'Stefano', 'Dario', 10, 5],
+    ['Domenico', 'Carmelo', 'Patrick', 'Dario', 10, 4],
 ];
 
 $ranking = [];
