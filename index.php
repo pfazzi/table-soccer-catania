@@ -19,6 +19,12 @@ $results = [
     ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', '10', '5'],
     ['Domenico', 'Vittorio', 'Stefano', 'Dario', 10, 5],
     ['Domenico', 'Carmelo', 'Patrick', 'Dario', 10, 4],
+
+    ['Domenico', 'Mirko', 'Stefano', 'Carmelo', 4, 10],
+    ['Patrick', 'Dario', 'Mirko', 'Vittorio', 7, 10],
+    ['Stefano', 'Dario', 'Patrick', 'Peppe', 10, 4],
+    ['Domenico', 'Vittorio', 'Mirko', 'Carmelo', 7, 10],
+    ['Mirko', 'Dario', 'Stefano', 'Peppe', 11, 13],
 ];
 
 $ranking = [];
@@ -26,11 +32,16 @@ $ranking = [];
 $loader = require __DIR__ . '/vendor/autoload.php';
 
 foreach ($results as $result) {
-    [$team_A_palyer_A,  $team_A_palyer_B, $team_B_palyer_A, $team_B_palyer_B, $score_team_A, $score_team_B] = $result;
-    $ranking = update_ranking($ranking, $team_A_palyer_A,  $team_A_palyer_B, $team_B_palyer_A, $team_B_palyer_B, $score_team_A, $score_team_B);
+    [$team_A_palyer_A, $team_A_palyer_B, $team_B_palyer_A, $team_B_palyer_B, $score_team_A, $score_team_B] = $result;
+    $ranking = update_ranking($ranking, $team_A_palyer_A, $team_A_palyer_B, $team_B_palyer_A, $team_B_palyer_B,
+        $score_team_A, $score_team_B);
 }
 
-print_r($ranking);
+arsort($ranking);
+$index = 1;
+foreach ($ranking as $player => $rating) {
+    echo str_pad($index++ . ') ' . $player, 15) . $rating . PHP_EOL;
+}
 
 function update_ranking(
     $ranking,
