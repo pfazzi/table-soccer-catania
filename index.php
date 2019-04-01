@@ -11,7 +11,7 @@ $results = [
     ['Patrick', 'Carmelo', 'Domenico', 'Vittorio', '5', '10'],
     ['Patrick', 'Carmelo', 'Vittorio', 'Dario', '10', '7'],
     ['Patrick', 'Carmelo', 'Domenico', 'Dario', '10', '6'],
-    ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', 'AB', '10'],
+    ['Stefano', 'Vittorio', 'Patrick', 'Carmelo', '12', '10'],
     ['Stefano', 'Vittorio', 'Domenico', 'Carmelo', '10', '4'],
     ['Patrick', 'Vittorio', 'Stefano', 'Dario', '8', '10'],
     ['Patrick', 'Vittorio', 'Domenico', 'Carmelo', '7', '10'],
