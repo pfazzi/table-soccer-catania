@@ -43,11 +43,11 @@ foreach ($results as $result) {
 arsort($ranking);
 $index = 1;
 
-echo "<code>";
+echo "<pre>";
 foreach ($ranking as $player => $rating) {
     echo str_pad($index++ . ') ' . $player, 15) . $rating . PHP_EOL;
 }
-echo "</code>";
+echo "</pre>";
 
 function update_ranking(
     $ranking,
