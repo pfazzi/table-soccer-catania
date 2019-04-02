@@ -29,10 +29,10 @@ $results = [
     ['Peppe', 'Stefano', 'Dario', 'Vittorio', 12, 14],
     ['Domenico', 'Carmelo', 'Vittorio', 'Dario', 10, 4],
 
-//    ['', '', '', '', , ],
-//    ['', '', '', '', , ],
-//    ['', '', '', '', , ],
-//    ['', '', '', '', , ],
+    ['Domenico', 'Carmelo', 'Patrick', 'Dario', 10, 6],
+    ['Mirko', 'Vittorio', 'Stefano', 'Dario', 10, 5],
+    ['Domenico', 'Vittorio', 'Luca', 'Patrick', 10, 7],
+    ['Stefano', 'Vittorio', 'Luca', 'Carmelo', 13, 11],
 ];
 
 $ranking = [];
