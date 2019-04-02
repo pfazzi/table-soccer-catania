@@ -69,6 +69,7 @@ function json_format_ranking(array $ranking)
 function text_format_ranking(array $ranking)
 {
     $index = 1;
+    header('content-type application/json');
     foreach ($ranking as $rating) {
         echo str_pad($index++ . ') ' . $rating['name'], 15) . $rating['rating'] . PHP_EOL;
     }
