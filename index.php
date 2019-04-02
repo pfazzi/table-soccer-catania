@@ -47,12 +47,32 @@ usort($ranking, function ($a, $b) {
     return ($a['rating'] < $b['rating']) ? 1 : -1;
 });
 
-$index = 1;
+
 echo "<pre>";
-foreach ($ranking as $rating) {
-    echo str_pad($index++ . ') ' . $rating['name'], 15) . $rating['rating'] . PHP_EOL;
-}
+json_format_ranking($ranking);
 echo "</pre>";
+
+function json_format_ranking(array $ranking)
+{
+    $index = 1;
+    echo json_encode([
+        "ranking" => array_map(function ($player) use (&$index) {
+            return [
+                "position" => $index++,
+                "name" => $player['name'],
+                "points" => $player['rating']
+            ];
+        }, $ranking)
+    ]);
+}
+
+function text_format_ranking(array $ranking)
+{
+    $index = 1;
+    foreach ($ranking as $rating) {
+        echo str_pad($index++ . ') ' . $rating['name'], 15) . $rating['rating'] . PHP_EOL;
+    }
+}
 
 function update_ranking(
     $ranking,

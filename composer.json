@@ -15,6 +15,7 @@
     }
   },
   "require": {
-    "chovanec/elo-rating": "dev-master"
+    "chovanec/elo-rating": "dev-master",
+    "ext-json": "*"
   }
 }
