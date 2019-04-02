@@ -48,9 +48,7 @@ usort($ranking, function ($a, $b) {
 });
 
 
-echo "<pre>";
 json_format_ranking($ranking);
-echo "</pre>";
 
 function json_format_ranking(array $ranking)
 {
