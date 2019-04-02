@@ -25,6 +25,8 @@ $results = [
     ['Stefano', 'Dario', 'Patrick', 'Peppe', 10, 4],
     ['Domenico', 'Vittorio', 'Mirko', 'Carmelo', 7, 10],
     ['Mirko', 'Dario', 'Stefano', 'Peppe', 11, 13],
+
+    ['Domenico', 'Vittorio', 'Stefano', 'Carmelo', 12, 10],
 ];
 
 $ranking = [];
@@ -37,10 +39,16 @@ foreach ($results as $result) {
         $score_team_A, $score_team_B);
 }
 
-arsort($ranking);
+usort($ranking, function ($a, $b) {
+    if ($a['rating'] == $b['rating']) {
+        return 0;
+    }
+    return ($a['rating'] < $b['rating']) ? 1 : -1;
+});
+
 $index = 1;
-foreach ($ranking as $player => $rating) {
-    echo str_pad($index++ . ') ' . $player, 15) . $rating . PHP_EOL;
+foreach ($ranking as $rating) {
+    echo str_pad($index++ . ') ' . $rating['name'], 15) . $rating['rating'] . PHP_EOL;
 }
 
 function update_ranking(
@@ -53,14 +61,14 @@ function update_ranking(
     $score_team_B
 ): array {
     $ranking = array_merge([
-        $team_A_palyer_A => 1000,
-        $team_A_palyer_B => 1000,
-        $team_B_palyer_A => 1000,
-        $team_B_palyer_B => 1000,
+        $team_A_palyer_A => ['name' => $team_A_palyer_A, 'rating' => 1000, 'streak' => 0],
+        $team_A_palyer_B => ['name' => $team_A_palyer_B, 'rating' => 1000, 'streak' => 0],
+        $team_B_palyer_A => ['name' => $team_B_palyer_A, 'rating' => 1000, 'streak' => 0],
+        $team_B_palyer_B => ['name' => $team_B_palyer_B, 'rating' => 1000, 'streak' => 0],
     ], $ranking);
 
-    $team_A_ranking = $ranking[$team_A_palyer_A] + $ranking[$team_A_palyer_B];
-    $team_B_ranking = $ranking[$team_B_palyer_A] + $ranking[$team_B_palyer_B];
+    $team_A_ranking = $ranking[$team_A_palyer_A]['rating'] + $ranking[$team_A_palyer_B]['rating'];
+    $team_B_ranking = $ranking[$team_B_palyer_A]['rating'] + $ranking[$team_B_palyer_B]['rating'];
 
     $score_team_A = $score_team_A > $score_team_B ? Rating::WIN : Rating::LOST;
     $score_team_B = $score_team_A ===  Rating::WIN ? Rating::LOST : Rating::WIN;
@@ -72,11 +80,11 @@ function update_ranking(
     $delta_A = (int) $team_A_new_ranking - $team_A_ranking;
     $delta_B = (int) $team_B_new_ranking - $team_B_ranking;
 
-    $ranking[$team_A_palyer_A] += $delta_A;
-    $ranking[$team_A_palyer_B] += $delta_A;
+    $ranking[$team_A_palyer_A]['rating'] += $delta_A;
+    $ranking[$team_A_palyer_B]['rating'] += $delta_A;
 
-    $ranking[$team_B_palyer_A] += $delta_B;
-    $ranking[$team_B_palyer_B] += $delta_B;
+    $ranking[$team_B_palyer_A]['rating'] += $delta_B;
+    $ranking[$team_B_palyer_B]['rating'] += $delta_B;
 
     return $ranking;
 }
