@@ -15,6 +15,7 @@
     }
   },
   "require": {
+    "php": "7.2",
     "chovanec/elo-rating": "dev-master",
     "ext-json": "*"
   }
