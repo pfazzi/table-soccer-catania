@@ -62,6 +62,9 @@ if (isset($_GET['ranking'])) {
 
 function results_action(array $results)
 {
+    header("Access-Control-Allow-Origin: *");
+    header('content-type application/json');
+
     echo json_encode([
         "games" => array_map(function ($result) {
             return [
@@ -78,6 +81,9 @@ function results_action(array $results)
 
 function ranking_action(array $ranking)
 {
+    header("Access-Control-Allow-Origin: *");
+    header('content-type application/json');
+
     $index = 1;
     echo json_encode([
         "ranking" => array_map(function ($player) use (&$index) {
@@ -93,10 +99,11 @@ function ranking_action(array $ranking)
 function text_format_ranking(array $ranking)
 {
     $index = 1;
-    header('content-type application/json');
+    echo '<pre>';
     foreach ($ranking as $rating) {
         echo str_pad($index++ . ') ' . $rating['name'], 15) . $rating['rating'] . PHP_EOL;
     }
+    echo '</pre>';
 }
 
 function update_ranking(
