@@ -28,6 +28,11 @@ $results = [
     ['Peppe', 'Carmelo', 'Mirko', 'Dario', 10, 8],
     ['Peppe', 'Stefano', 'Dario', 'Vittorio', 12, 14],
     ['Domenico', 'Carmelo', 'Vittorio', 'Dario', 10, 4],
+
+//    ['', '', '', '', , ],
+//    ['', '', '', '', , ],
+//    ['', '', '', '', , ],
+//    ['', '', '', '', , ],
 ];
 
 $ranking = [];
@@ -47,10 +52,31 @@ usort($ranking, function ($a, $b) {
     return ($a['rating'] < $b['rating']) ? 1 : -1;
 });
 
+if (isset($_GET['ranking'])) {
+    ranking_action($ranking);
+} elseif (isset($_GET['games'])) {
+    results_action($results);
+} else {
+    text_format_ranking($ranking);
+}
 
-json_format_ranking($ranking);
+function results_action(array $results)
+{
+    echo json_encode([
+        "games" => array_map(function ($result) {
+            return [
+                "DefenderA" => $result[0],
+                "StrikerA" => $result[1],
+                "DefenderB" => $result[2],
+                "StrikerB" => $result[3],
+                "ResultA" => $result[4],
+                "ResultB" => $result[5],
+            ];
+        }, $results)
+    ]);
+}
 
-function json_format_ranking(array $ranking)
+function ranking_action(array $ranking)
 {
     $index = 1;
     echo json_encode([
