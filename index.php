@@ -54,6 +54,8 @@ usort($ranking, function ($a, $b) {
     return ($a['rating'] < $b['rating']) ? 1 : -1;
 });
 
+ranking_action($ranking); die();
+
 if (isset($_GET['ranking'])) {
     ranking_action($ranking);
 } elseif (isset($_GET['games'])) {
