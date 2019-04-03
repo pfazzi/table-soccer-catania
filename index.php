@@ -66,7 +66,7 @@ if (isset($_GET['ranking'])) {
 
 function results_action(array $results)
 {
-    header("Access-Control-Allow-Origin: *");
+//    header("Access-Control-Allow-Origin: *");
     header('content-type application/json');
 
     echo json_encode([
@@ -85,7 +85,7 @@ function results_action(array $results)
 
 function ranking_action(array $ranking)
 {
-    header("Access-Control-Allow-Origin: *");
+//    header("Access-Control-Allow-Origin: *");
     header('content-type application/json');
 
     $index = 1;
