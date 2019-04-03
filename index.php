@@ -2,6 +2,8 @@
 
 use Chovanec\Rating\Rating;
 
+error_reporting(E_ALL);
+
 $results = [
     ['Umberto', 'Vittorio', 'Stefano', 'Dario', 12, 10],
     ['Patrick', 'Carmelo', 'Domenico', 'Mirko', 10, 5],
